@@ -1,0 +1,65 @@
+//********************************************************************//
+//								      //
+//--------------Algorithm Testing Speficication Document--------------//
+//				V.1.0				      //
+//********************************************************************//
+
+
+i. Purpose
+	The purpose of this program is to correctly implement and test the efficiency of various comparison based sorting algorithms.
+
+ii. Scope
+	various algorithms as listed below will be tested by giving a number lists as input and
+	comparing it to the correctly sorted sequence. The algorithms will then be analysed by giving a series of
+	chosen, partially sorted and completely random inputs. The program will give lists of average, lowest 
+	and highest test cases for each set of inputs.
+	
+	algorithms:
+		bubble sort
+		insertion sort
+		quick sort
+		merge sort
+		heap sort
+
+iii. Requirements
+	
+
+	Test cases
+		Inorder to test the correctness of the algorithm, an array of incrementing integers will be randomized and compared
+		against the original array.	
+		
+
+	Analysis
+
+			There will be 3 types of input: chosen, partialy sorted and random
+	
+
+		Chosen			- stricly incremented and decremented lists of inputs will be tested
+
+		partially sorted	- a sorted list will have a small randomized amount of elements unsorted
+
+		randomized		- a large set of randomized inputs will be used
+
+
+		Each algorithm will be given the same set of data and timed. A list of best runtime, worst runtime and average runtime 
+		will be returned.
+
+
+	Algorithms
+			There will be 4 sorting algorithms used on lists of data: bubble sort, insertion sort, quick sort and merge sort.
+
+
+		bubble sort		- Makes multiple passes, incrementing through the array and compares values next to eachother.
+						worst case: O(n^2) Best case: (omega)(n) 
+		
+		insertion sort		- Builds a sorted array by inserting values into it.
+						Worst case: O(n^2) Best case: (omega)(n)
+		
+		quick sort		- Recursively picks a pivot value and splits the list into sections larger/smaller than the pivot, then rebuilds in order.
+						Worst case: O(n^2) Best case: (omega)(nlog(n))
+		
+		merge sort		- Recursively splits a list into 2 sections until their size is one, then rebuilds them in order.
+						Worst case: O(nlog(n)) Best case: (omega)(nlog(n))
+
+		heap sort		- Uses a heap data structure and itteratively inserts largest elements into a sorted section.
+						Worst case: O(nlog(n)) Best case: (omega)(nlog(n))
