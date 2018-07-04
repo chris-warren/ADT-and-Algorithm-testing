@@ -27,6 +27,22 @@ public class AlgTest{
         return arr;
     }
 
+    //inseretion sort method
+    public static int[] insertionSort(int arr[]){
+        int n = arr.length;
+        for (int i=1; i<n; ++i){
+            int key = arr[i];
+            int j = i-1;
+            //bump keyes greater then arr[i] one index higher
+            while (j>=0 && arr[j] > key){
+                arr[j+1] = arr[j];
+                j = j-1;
+            }
+            arr[j+1] = key;
+        }
+        return arr;
+    }
+
     //test method that creates a random array with distinct keyes, sorts it and tests it for correctness
     public static boolean test(){
     	boolean test = true;
@@ -34,12 +50,12 @@ public class AlgTest{
     	for(int i=0; i<100; i++){
     		arrSorted[i]=i;
     	}
-    	int[] arrUnsorted = arrSorted;
-    	shuffleArray(arrUnsorted);
-
-    	bubbleSort(arrUnsorted);
-
-    	if(arrSorted==arrUnsorted){
+    	int[] arrUnsorted1 = arrSorted;
+    	shuffleArray(arrUnsorted1);
+		int[] arrUnsorted2 = arrUnsorted1;
+    	bubbleSort(arrUnsorted1);
+    	insertionSort(arrUnsorted2);
+    	if(arrSorted==arrUnsorted1&&arrSorted==arrUnsorted2){
     		return true;
     	}else{
     		return false;
@@ -63,7 +79,7 @@ public class AlgTest{
     public static void main(String args[]){
     	
 
-    	//tests bubble sort 50 times
+    	//tests sorting methods 50 times
     	boolean test = true;
     	for(int i=0; i<50; i++){
     		if(!test()){
@@ -73,6 +89,8 @@ public class AlgTest{
     	}
     	if(test){
     		System.out.println("All tests passed!");
+    	}else{
+    		System.out.println("a test failes:( individually test methods to find out which one");
     	}
     }
 }
